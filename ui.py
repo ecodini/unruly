@@ -1,9 +1,9 @@
 from typing import Tuple
-import unruly
+from unruly import dimensiones, Grilla
 
 
-def print_grid(grilla: unruly.Grilla) -> None:
-    col_num, row_num = unruly.dimensiones(grilla)
+def print_grid(grilla: Grilla) -> None:
+    col_num, row_num = dimensiones(grilla)
     
     print('# | ', end='')
 

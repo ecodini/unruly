@@ -1,30 +1,29 @@
-import random
-
-import niveles
-import unruly
-import ui
+from random import choice
+from niveles import NIVELES
+from unruly import crear_grilla, dimensiones, cambiar_a_uno, cambiar_a_cero, grilla_terminada
+from ui import print_grid, enter_coordinates
 import consts
 
 def main():
-    nivel = random.choice(niveles.NIVELES)
-    grilla = unruly.crear_grilla(nivel)
+    nivel = choice(NIVELES)
+    grilla = crear_grilla(nivel)
 
-    col_num, row_num = unruly.dimensiones(grilla)
+    col_num, row_num = dimensiones(grilla)
 
     print("Juego UNRULY")
     print("Hecho por Enzo Codini para ALG 1, FIUBA 2023")
 
     while True:
-        ui.print_grid(grilla)
-        col, row, val = ui.enter_coordinates()
+        print_grid(grilla)
+        col, row, val = enter_coordinates()
 
         if col < col_num and row < row_num and val in (consts.ONE, consts.ZERO):
             if val == consts.ONE:
-                unruly.cambiar_a_uno(grilla, col, row)
+                cambiar_a_uno(grilla, col, row)
             else:
-                unruly.cambiar_a_cero(grilla, col, row)
+                cambiar_a_cero(grilla, col, row)
         
-        if unruly.grilla_terminada(grilla):
+        if grilla_terminada(grilla):
             print('Juego terminado! Habeis ganado, enhorabuena!!!!!')
             quit()
 
