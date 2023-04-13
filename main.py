@@ -6,7 +6,7 @@ import ui
 import consts
 
 def main():
-    nivel = random.choice(niveles.NIVELES)
+    nivel = niveles.NIVELES[0] # random.choice(niveles.NIVELES)
     grilla = unruly.crear_grilla(nivel)
 
     col_num, row_num = unruly.dimensiones(grilla)
@@ -26,5 +26,6 @@ def main():
         
         if unruly.grilla_terminada(grilla):
             print('Juego terminado! Habeis ganado, enhorabuena!!!!!')
+            quit()
 
 main()
