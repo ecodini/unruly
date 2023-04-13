@@ -6,7 +6,7 @@ import ui
 import consts
 
 def main():
-    nivel = niveles.NIVELES[0] # random.choice(niveles.NIVELES)
+    nivel = random.choice(niveles.NIVELES)
     grilla = unruly.crear_grilla(nivel)
 
     col_num, row_num = unruly.dimensiones(grilla)
