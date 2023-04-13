@@ -65,7 +65,7 @@ def cambiar_a_uno(grilla: Grilla, col: int, fil: int):
 def cambiar_a_cero(grilla: Grilla, col: int, fil: int):
     """Modifica la grilla, colocando el valor 0 en la posición de la grilla
     dada por las coordenadas `col` y `fil`"""
-    grilla[fil][col] = '1'
+    grilla[fil][col] = '0'
 
 
 def cambiar_a_vacio(grilla: Grilla, col: int, fil: int):
