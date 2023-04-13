@@ -36,4 +36,4 @@ def enter_coordinates() -> Tuple[int, int, int]:
         coordinates = entry.split(' ')
 
         if len(coordinates) == 3 and all(c.isdigit() for c in coordinates):
-            return list(map(int, coordinates))
+            return (int(coordinates[0]), int(coordinates[1]), coordinates[2])

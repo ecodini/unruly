@@ -1,6 +1,7 @@
 """Lógica del juego Unruly"""
 
 from typing import List, Tuple, Any
+import consts
 
 Grilla = List[List]
 
@@ -41,37 +42,37 @@ def dimensiones(grilla: Grilla) -> Tuple[int, int]:
 def posicion_es_vacia(grilla: Grilla, col: int, fil: int) -> bool:
     """Devuelve un booleano indicando si la posición de la grilla dada por las
     coordenadas `col` y `fil` está vacía"""
-    return grilla[fil][col] == ' '
+    return grilla[fil][col] == consts.EMPTY
 
 
 def posicion_hay_uno(grilla: Grilla, col: int, fil: int) -> bool:
     """Devuelve un booleano indicando si la posición de la grilla dada por las
     coordenadas `col` y `fil` está el valor 1"""
-    return grilla[fil][col] == '1'
+    return grilla[fil][col] == consts.ONE
 
 
 def posicion_hay_cero(grilla: Grilla, col: int, fil: int) -> bool:
     """Devuelve un booleano indicando si la posición de la grilla dada por las
     coordenadas `col` y `fil` está el valor 0"""
-    return grilla[fil][col] == '0'
+    return grilla[fil][col] == consts.ZERO
 
 
 def cambiar_a_uno(grilla: Grilla, col: int, fil: int):
     """Modifica la grilla, colocando el valor 1 en la posición de la grilla
     dada por las coordenadas `col` y `fil`"""
-    grilla[fil][col] = '1'
+    grilla[fil][col] = consts.ONE
 
 
 def cambiar_a_cero(grilla: Grilla, col: int, fil: int):
     """Modifica la grilla, colocando el valor 0 en la posición de la grilla
     dada por las coordenadas `col` y `fil`"""
-    grilla[fil][col] = '0'
+    grilla[fil][col] = consts.ZERO
 
 
 def cambiar_a_vacio(grilla: Grilla, col: int, fil: int):
     """Modifica la grilla, eliminando el valor de la posición de la grilla
     dada por las coordenadas `col` y `fil`"""
-    grilla[fil][col] = ' '
+    grilla[fil][col] = consts.EMPTY
 
 
 def fila_es_valida(grilla: Grilla, fil: int) -> bool:
@@ -99,7 +100,7 @@ def fila_es_valida(grilla: Grilla, fil: int) -> bool:
 
         lastchar = char
 
-    return row.count(' ') == 0 and row.count('1') == row.count('0')
+    return row.count(consts.EMPTY) == 0 and row.count(consts.ONE) == row.count(consts.ZERO)
 
 
 def columna_es_valida(grilla: Grilla, col: int) -> bool:
@@ -124,7 +125,7 @@ def columna_es_valida(grilla: Grilla, col: int) -> bool:
 
         lastchar = char
 
-    return column.count(' ') == 0 and column.count('1') == column.count('0')
+    return column.count(consts.EMPTY) == 0 and column.count(consts.ONE) == column.count(consts.ZERO)
 
 
 def grilla_terminada(grilla: Grilla) -> bool:
