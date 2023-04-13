@@ -8,6 +8,6 @@ def main():
     grilla = unruly.crear_grilla(nivel)
 
     print("UNRULY TEST")
-    print(unruly.columna_es_valida(grilla, 1))
+    print(unruly.grilla_terminada(grilla))
 
 main()

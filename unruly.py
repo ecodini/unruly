@@ -132,3 +132,14 @@ def grilla_terminada(grilla: Grilla) -> bool:
 
     Una grilla se considera terminada si todas sus filas y columnas son
     válidas."""
+    col_num, rows_num = dimensiones(grilla)
+
+    for row in range(0, rows_num):
+        if not fila_es_valida(grilla, row):
+            return False
+
+    for col in range(0, col_num):
+        if not columna_es_valida(grilla, col):
+            return False
+
+    return True
